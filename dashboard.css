@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    appearance: none;
+    text-decoration: none;
+    border: 0;
+    list-style: none;
+}
+
+
+:root {
+    /* --cyan: #16a7a7; */
+    --cyan: #000;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 8px 12px 17px rgb(185, 183, 183);
+    --color-dark: #363949;
+    --color-white: #fff;
+    --color-background: #f5f5f9;
+    --color-dark-variant: #677489;
+}
+
+
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    font-size: 0.88rem;
+    background-color: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    /* gap: 1.8rem; */
+    grid-template-columns: 14rem auto;
+}
+
+
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--black);
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--black);
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+.text-muted {
+    color: var(--indigo) !important;
+}
+
+.profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.text-muted {
+    color: var(--cyan);
+}
+
+p {
+    color: var(--black);
+}
+
+/* b {
+    color: var(--indigo);
+} */
+
+
+aside {
+    height: 120vh;
+}
+
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
+}
+
+aside .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .4rem;
+}
+
+aside .close {
+    display: none;
+}
+
+
+aside .sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    top: .5rem;
+}
+
+aside h3 {
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+aside .sidebar a {
+    margin-top: 7px;
+    display: flex;
+    padding-left: 2rem;
+    align-items: center;
+    align-content: center;
+    height: 3rem;
+    transition: all 300ms ease;
+}
+
+aside .sidebar a h3 {
+    font-size: 12px !important;
+}
+
+aside .sidebar a:hover {
+    background-color: rgba(0, 0, 0, 0.295);
+}
+
+aside .sidebar a span {
+    font-size: 1.2rem;
+    transition: all 300ms ease-in-out;
+}
+
+
+
+
+
+
+
+/* main body starts here */
+
+
+main {
+    margin-top: 1.4rem;
+    /* margin-left: 21rem; */
+}
+
+
+/* my right section starts here */
+.right {
+    margin-top: 1.4rem;
+    margin-right: 20px;
+}
+
+.right .top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right .top button {
+    display: none;
+}
+
+
+.right .top .profile {
+    display: flex;
+    text-align: right;
+    gap: 1rem;
+}
+
+
+/* media queries */
+
+/* @media screen and (max-width:1200px) {
+    .container {
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width: 5.6rem;
+    }
+
+
+} */
+
+/* @media screen and (max-width: 768px) { */
+.container {
+    width: 100%;
+    grid-template-columns: 1fr;
+}
+
+aside {
+    position: fixed;
+    left: -100%;
+    background: var(--color-white);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    height: 100vh;
+    overflow-y: scroll;
+    padding-right: var(--card-padding);
+    display: none;
+    animation: showMenu 1.5s ease forwards;
+}
+
+@keyframes showMenu {
+    from {
+        right: 0;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+aside .logo {
+    margin-left: 1rem;
+}
+
+aside .logo h2 {
+    display: inline;
+}
+
+/* aside .sidebar h3 {
+    display: inline;
+    height: 3.4rem;
+} */
+
+
+aside .close {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+main {
+    margin-top: 8rem;
+    padding: 0 1rem;
+}
+
+.right {
+    width: 94%;
+    margin: 0 auto 4rem;
+}
+
+.right .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    /* height: 6.6rem; */
+    background: var(--color-white);
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 1rem 1rem var(--color-light);
+}
+
+.right .profile .info {
+    display: none;
+}
+
+.right .top button {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--black);
+    position: absolute;
+    left: 1rem;
+    font-size: 40px;
+}
+
+.rigt .top button span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+/* } */
